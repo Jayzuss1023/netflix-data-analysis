@@ -49,7 +49,7 @@ dbt commands are run from `netflix/`.
 
 Shawshank Redemption comes out first (about 4.45, ~63k ratings), then The Godfather, The Usual Suspects, Schindler's List, and The Godfather Part II.
 
-![Top 20 movies by average rating, run in Snowflake](docs/snowflake-top-movies.png)
+<img src="docs/snowflake-top-movies.png" alt="Top 20 movies by average rating, run in Snowflake" width="900">
 
 ```bash
 uv run dbt compile
@@ -61,15 +61,17 @@ Compiled SQL is written to `target/compiled/netflix/analyses/movie_analysis.sql`
 
 `dbt docs generate` builds the site. `dbt docs serve` opens it at [http://localhost:8080](http://localhost:8080).
 
-Sources are listed under `netflix`: `r_movies`, `r_ratings`, `r_tags`, `r_links`, `r_genome_tags`, and `r_genome_scores`. `r_genome_scores` is the large one, about 11.7 million rows.
+The Project tab follows the project folders. Sources sit under `netflix`: `r_movies`, `r_ratings`, `r_tags`, `r_links`, `r_genome_tags`, and `r_genome_scores`. `r_genome_scores` is the large one, about 11.7 million rows. The page below is `r_movies`, which reads `NETFLIX.raw.r_movies` and is referenced by `src_movies`.
 
-![dbt docs home page](docs/dbt-docs-home.png)
+<img src="docs/dbt-source-movies.png" alt="dbt docs Project tab: netflix.r_movies source" width="900">
 
-![Genome scores source: movieid, tagid, relevance](docs/dbt-source-genome-scores.png)
+The Database tab lists those objects by schema. `dim_genome_tags` is the cleaned tag list, with `tag_id` and `tag_name`. `dim_movies_with_tags` references it.
+
+<img src="docs/dbt-dim-genome-tags.png" alt="dbt docs Database tab: dim_genome_tags columns" width="900">
 
 The lineage graph is the easiest way to see the pipeline. Green nodes are the raw sources. Ratings feed `fct_ratings`, `dim_users`, and `mart_movie_releases`. Tags feed `snap_tags`. Genome scores and tags meet `dim_movies` in `dim_movies_with_tags`.
 
-![Lineage graph from dbt docs](docs/dbt-lineage.png)
+<img src="docs/dbt-lineage.png" alt="Lineage graph from dbt docs" width="900">
 
 ## Setup
 
