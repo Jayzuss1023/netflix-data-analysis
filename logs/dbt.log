@@ -119,3 +119,19 @@ Runtime Error
 [0m17:29:13.458210 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bf1e570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bed4e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bf9f4d0>]}
 [0m17:29:13.458468 [debug] [MainThread]: Flushing usage events
 [0m17:29:13.817341 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:43:11.311048 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d0aeb70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e2aa390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e2a9fa0>]}
+
+
+============================== 15:43:11.324427 | 8d66ab92-e79f-4361-92af-2e2bd8675b04 ==============================
+[0m15:43:11.324427 [info ] [MainThread]: Running with dbt=1.12.5
+[0m15:43:11.325555 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'no_print': 'None', 'cache_selected_only': 'False', 'write_json': 'True', 'hints_enabled': 'True', 'use_colors': 'True', 'debug': 'False', 'printer_width': '80', 'target_path': 'None', 'warn_error': 'None', 'introspect': 'True', 'indirect_selection': 'eager', 'partial_parse': 'True', 'profiles_dir': '/Users/jesusflores/.dbt', 'empty': 'None', 'log_path': 'logs', 'invocation_command': 'dbt parse', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'static_parser': 'True', 'fail_fast': 'False', 'maximum_seed_size_mib': '1', 'quiet': 'False', 'version_check': 'True'}
+[0m15:43:11.326697 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/jesusflores/Desktop/webdev/python/netflix-dbt/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m15:43:11.327937 [debug] [MainThread]: Resource report: {"command_name": "parse", "command_success": false, "command_wall_clock_time": 0.08677588, "process_in_blocks": "0", "process_kernel_time": 0.225269, "process_mem_max_rss": "116097024", "process_out_blocks": "0", "process_user_time": 1.061257}
+[0m15:43:11.329372 [debug] [MainThread]: Command `dbt parse` failed at 15:43:11.328852 after 0.09 seconds
+[0m15:43:11.330226 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d5f6b10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e2aa390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e2abce0>]}
+[0m15:43:11.331068 [debug] [MainThread]: Flushing usage events
+[0m15:43:11.449952 [debug] [MainThread]: An error was encountered while trying to flush usage events
