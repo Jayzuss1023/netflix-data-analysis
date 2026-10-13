@@ -1,3 +1,6 @@
+-- a reporting table that flags whether each movie rating has a known release date.
+-- mart table - query meant for analysis.
+-- The query pulls two sources and left-joins those ratings to the seed on movie_id then it adds one column, release_info_available
 {{ config(materialized = 'table') }}
 
 WITH fct_ratings AS (
